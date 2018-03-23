@@ -1,0 +1,13 @@
+/* pages/add/add.wxss */
+.section {
+  width: 600rpx;
+}
+.inline{
+  display: inline;
+}
+.mb-16{
+  margin-bottom: 16rpx;
+}
+.mt-16{
+  margin-top: 16rpx;
+}

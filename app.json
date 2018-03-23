@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/add/add"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "瓦特todo",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "todos",
+        "iconPath": "assets/all.png",
+        "selectedIconPath": "assets/select_all.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "add",
+        "iconPath": "assets/add.png",
+        "selectedIconPath": "assets/select_add.png"
+      }
+    ]
+  }
+}

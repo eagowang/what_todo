@@ -1,0 +1,15 @@
+<view class="container"> 
+  <view class="section" style="margin-top: 100rpx;">
+    <label for="todoInput">
+      <view class="info-text inline" style="width:20%;">文本：</view>
+      <input id="todoInput" placeholder="添加一条todo" type='text' bindinput='inputTodo' style="width:80%;" value="{{text}}"/>
+    </label>
+
+    <picker value="{{index}}" range="{{weights}}" bindchange='bindWeightChange' class='mt-16'>
+      <view class="picker" class="info-text mt-16">权重：<input value="{{weight}}" placeholder='选择权重'/></view>
+    </picker> 
+
+    <button bindtap="updateTodo" type='primary' style="margin-top: 100rpx">添加一个</button>
+  </view>
+
+ </view> 

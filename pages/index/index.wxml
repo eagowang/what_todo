@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+  <view>hi, <view class='info-text inline'>{{userInfo.nickName}}</view></view>
+  <view>today, <view class='info-text inline'>{{todo.total}}</view> to do</view>
+  <view class="section mt-16">
+    <!-- T todo object -->
+    <view wx:for='{{todo.data}}' >
+      <!-- weight bar -->
+      <view wx:if='{{item.length}}' class="weight-wrap ">
+        <view class="weight-text {{index==0?'error':index==1?'warning':index==2?'primary':'default'}}">{{weights[index]}}</view>
+        <view class="border {{index==0?'error-border':index==1?'warning-border':index==2?'primary-border':'default-border'}}"></view>
+      </view>
+      <!-- todolist with weight -->
+      
+      <view wx:for='{{item}}' wx:for-item='todoItem' class='mb-16'>
+        <checkbox-group bindchange="checkboxChange" data-index='{{todoItem.id}}' data-weight='{{todoItem.weight}}'>
+          <label class='checkbox checkbox-wrap'>
+            <checkbox wx:if="{{todoItem.done}}" class="line-through" data-index="{{todoItem.id}}" data-weight='{{todoItem.weight}}' value="{{todoItem.id}}" checked="{{todoItem.done}}">
+            {{todoItem.text}}
+            <!-- <text >{{todoItem.text}}</text>
+            <text wx:else>{{todoItem.text}}</text> -->
+            </checkbox>
+            <checkbox wx:else data-index="{{todoItem.id}}" data-weight='{{todoItem.weight}}' value="{{todoItem.id}}" checked="{{todoItem.done}}">{{todoItem.text}}
+            <!-- <text >{{todoItem.text}}</text>
+            <text wx:else>{{todoItem.text}}</text> -->
+            </checkbox>
+            <!-- <view wx:if="{{todoItem.done}}" class='border border-cancel'></view> -->
+          </label>
+          <icon type="clear" class="icon" data-index='{{todoItem.id}}' data-weight='{{todoItem.weight}}' bindtap='delTodo'></icon>
+        </checkbox-group>
+      </view>
+    </view>
+    
+  </view>
+  
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> -->
+</view>
