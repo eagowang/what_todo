@@ -1,10 +1,91 @@
 /**app.wxss**/
+@import 'style/weui.wxss';
+page{
+  height: 100%;
+}
 .container {
   height: 100%;
+  background: #f5f5f5;
+}
+.keyword{
+  color: #56a36c;
+}
+.line-through{
+  text-decoration: line-through;
+}
+
+.section{
+  overflow: hidden;
+}
+.head{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  background: #fff;
   padding: 20rpx 0;
-  box-sizing: border-box;
-} 
+  margin-bottom: 20rpx;
+}
+.head__avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  background-color: #eeeeee;
+}
+.head__desc{
+  margin-left: 20rpx;
+  font-size: 14px;
+  color: #333;
+}
+.main{
+
+}
+.todo-item{
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.todo-weight{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  font-size: 14px;
+  color: white;
+  border-bottom: 1rpx solid #eff0dc;
+}
+.todo-weight__desc{
+  margin-left: 40rpx;
+}
+.circle-l{
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  background-color: white;
+}
+.circle-s{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+}
+.primary{
+  background-color: #00343f;
+}
+.warning{
+  background-color: #1db0d8;
+}
+.info{
+  background-color: #37c6c0;
+}
+.default{
+  background-color: #d0e9ff;
+}
+.add-btn{
+  margin-bottom: 50rpx;
+}

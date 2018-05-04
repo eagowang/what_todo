@@ -1,0 +1,17 @@
+/* pages/history/history.wxss */
+.common-font{
+    font-size: 14px;
+    color: #333;
+}
+.tips{
+    padding: 20rpx 0;
+    text-align: center;
+}
+.date{
+    padding: 20rpx 40rpx;
+    border-bottom: 1px solid #eff0dc;
+}
+
+/* 修改weui的cell的默认样式 */
+.weui-cells:after{bottom:0;border-bottom:none}
+.weui-cells:before{top:0;border-top:none}

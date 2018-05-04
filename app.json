@@ -2,27 +2,31 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/add/add"
+    "pages/add/add",
+    "pages/history/history"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#56a36c",
     "navigationBarTitleText": "瓦特todo",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
+    "color": "#eff0dc",
+    "selectedColor": "white",
+    "backgroundColor": "#56a36c",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "todos",
-        "iconPath": "assets/all.png",
-        "selectedIconPath": "assets/select_all.png"
+        "text": "列表",
+        "iconPath": "assets/冲浪.png",
+        "selectedIconPath": "assets/冲浪.png"
       },
       {
-        "pagePath": "pages/add/add",
-        "text": "add",
-        "iconPath": "assets/add.png",
-        "selectedIconPath": "assets/select_add.png"
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "assets/飞机.png",
+        "selectedIconPath": "assets/飞机.png"
       }
     ]
   }

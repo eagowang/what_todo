@@ -1,15 +1,26 @@
-<view class="container"> 
-  <view class="section" style="margin-top: 100rpx;">
-    <label for="todoInput">
-      <view class="info-text inline" style="width:20%;">文本：</view>
-      <input id="todoInput" placeholder="添加一条todo" type='text' bindinput='inputTodo' style="width:80%;" value="{{text}}"/>
-    </label>
-
-    <picker value="{{index}}" range="{{weights}}" bindchange='bindWeightChange' class='mt-16'>
-      <view class="picker" class="info-text mt-16">权重：<input value="{{weight}}" placeholder='选择权重'/></view>
-    </picker> 
-
-    <button bindtap="updateTodo" type='primary' style="margin-top: 100rpx">添加一个</button>
+<view class="">
+  <view class="weui-cells__title">增加一个</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">文本：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="添加一条todo" bindinput="inputTodo" value="{{newTodo.text}}"/>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">权重</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker value="{{index}}" range="{{weights}}" bindchange="bindWeightChange">
+          <view class="weui-input">{{weights[newTodo.weight]}}</view>
+        </picker>
+      </view>
+    </view>
   </view>
-
+  <view style="margin-top: 60rpx">
+    <button class="weui-btn" type="primary" bindtap="updateTodo">确定</button>
+  </view>
  </view> 

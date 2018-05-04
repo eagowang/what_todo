@@ -1,0 +1,33 @@
+<!--pages/history/history.wxml-->
+<view class="section ">
+    <view class="common-font tips">tips:历史记录只展示最近7天</view>
+    <view wx:for="{{historyTodo}}" wx:for-item="historyItem">
+
+        <view class="common-font date">{{historyItem.time}}, 达成率<text class="keyword">{{historyItem.completeRate}}%</text></view>
+        <view wx:for='{{historyItem.data}}' >
+            <!-- weight bar -->
+            <view wx:if='{{item.length}}' class="todo-weight {{index==0 ? 'primary' : (index == 1 ? 'warning' :  (index == 2 ? 'info' : 'default'))}}">
+                <view class="circle-l">
+                    <view class="circle-s {{index==0 ? 'primary' : (index == 1 ? 'warning' :  (index == 2 ? 'info' : 'default'))}}"></view>
+                </view>
+                <view class="todo-weight__desc">{{weights[index]}}</view>
+            </view>
+            <!-- todolist with weight -->
+
+            <view class="weui-cells weui-cells_after-title" wx:for="{{item}}" wx:for-item="todoItem" wx:for-index="todoIndex" wx:key="value">
+                <checkbox-group>
+                    <label class="weui-cell weui-check__label" >
+                        <checkbox class="weui-check" value="{{todoItem.id}}" checked="{{todoItem.done}}"/>
+
+                        <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                            <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!todoItem.done}}"></icon>
+                            <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{todoItem.done}}"></icon>
+                        </view>
+                        <view class="weui-cell__bd line-through" wx:if="{{todoItem.done}}">{{todoItem.text}}</view>
+                        <view class="weui-cell__bd" wx:if="{{!todoItem.done}}">{{todoItem.text}}</view>
+                    </label>
+                </checkbox-group>
+            </view>
+        </view>
+    </view>
+</view>
